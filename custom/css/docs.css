@@ -1,0 +1,164 @@
+.t-shirt-panel {
+    height: 561px;
+    background: linear-gradient(top, #dddcd8, #ebeae9);
+    background: -o-linear-gradient(top, #dddcd8, #ebeae9);
+    background: -moz-linear-gradient(top, #dddcd8, #ebeae9);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#dddcd8), to(#ebeae9));
+    position: relative;
+}
+
+.t-shirt-panel .choose-button-group {
+    margin-left: 10px;
+}
+
+.t-shirt-panel .publish-button-group {
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.t-shirt-panel .choose-button-group .btn,
+.t-shirt-panel .publish-button-group .btn,
+.t-shirt-panel .edit-button-group .btn {
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.t-shirt-panel .left-col {
+    padding-left: 25px;
+}
+
+.t-shirt-panel .mid-col {
+}
+
+.t-shirt-panel .mid-col .canvas-wrapper {
+    width: 480px;
+    height: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.t-shirt-panel .right-col {
+    padding-top: 300px;
+    padding-right: 25px;
+}
+
+.t-shirt-panel .position-button-group,
+.t-shirt-panel .color-button-group,
+.t-shirt-panel .size-button-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.t-shirt-panel .position-button-group .btn {
+    padding: 5px;
+}
+
+.t-shirt-panel .position-button-group .btn img {
+    width: 40px;
+    height: 40px;
+}
+
+.t-shirt-panel .color-button-group .btn {
+    padding: 2px 6px;
+}
+
+.t-shirt-panel .color-button-group .blue {
+    color: blue;
+}
+
+.t-shirt-panel .color-button-group .red {
+    color: red;
+}
+
+.t-shirt-panel .color-button-group .black {
+    color: black;
+}
+
+.t-shirt-panel .color-button-group .white {
+    color: white;
+}
+
+.t-shirt-panel .size-button-group .btn {
+    width: 46px;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.t-shirt-panel #edit-toolbar {
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    width: 36px;
+    display: none;
+}
+
+.t-shirt-panel #edit-toolbar .btn {
+    width: 40px;
+}
+
+.t-shirt-panel .popover {
+    display: none;
+}
+
+.t-shirt-panel .popover .arrow {
+    top: 20px;
+}
+
+.t-shirt-panel #color-settings {
+    width: 248px;
+    left: 865px;
+    top: 58px;
+}
+
+.t-shirt-panel #color-settings .btn {
+    padding: 0 4px;
+    margin: 2px 0;
+}
+
+.t-shirt-panel #text-settings {
+    width: 248px;
+    left: 865px;
+    top: 90px;
+}
+
+.t-shirt-panel #text-settings .btn {
+    width: 40px;
+}
+
+.t-shirt-panel #remove-object {
+    width: 138px;
+    left: 975px;
+    top: 258px;
+}
+
+.t-shirt-panel #remove-object .btn {
+    width: 50px;
+}
+
+.t-shirt-panel #color-settings .btn.active {
+    border: 1px solid aqua;
+}
+
+#modal-preview .image-box {
+    width: 480px;
+    height: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+#modal-preview .image-wrapper {
+    width: 212px;
+    height: 400px;
+    position: absolute;
+    -webkit-user-select: none;
+    left: 135px;
+    top: 48px;
+}

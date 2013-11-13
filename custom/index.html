@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Design your own T-shirt</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+        <link href="css/docs.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <div class="container t-shirt-panel">
+            <div class="row">
+                <div class="choose-button-group btn-group pull-left tools" id="container">
+                    <a class="btn btn-default btn-sm active" data-action="choose-product">Choose Product</a>
+                    <a class="btn btn-default btn-sm" data-action="choose-design">Choose Design</a>
+                    <a class="btn btn-default btn-sm" data-action="add-text">Add Custom Text</a>
+                    <a class="btn btn-default btn-sm" id="pickfiles" data-action="upload-photo">Upload Photo</a>
+                </div>
+                <div class="publish-button-group btn-group pull-right tools">
+                    <a class="btn btn-default btn-sm" title="Save product"><i class="icon-save"></i></a>
+                    <a class="btn btn-default btn-sm" title="Send product via email"><i class="icon-envelope-alt"></i></a>
+                    <a class="btn btn-default btn-sm" title="Post product on Facebook"><i class="icon-facebook-sign"></i></a>
+                    <a class="btn btn-default btn-sm" title="Share product on Twitter"><i class="icon-twitter"></i></a>
+                    <a class="btn btn-default btn-sm" title="Open/close panel"><i class="icon-play"></i></a>
+                </div>
+                <div class="edit-button-group btn-group pull-right tools">
+                    <a class="btn btn-default btn-sm" title="New"><i class="icon-file"></i></a>
+                    <a class="btn btn-default btn-sm" data-action='preview' title="Redo"><i class="icon-picture"></i></a>
+                    <a class="btn btn-default btn-sm" title="Undo"><i class="icon-undo"></i></a>
+                    <a class="btn btn-default btn-sm" title="Redo"><i class="icon-repeat"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 left-col">
+
+                </div>
+                <div class="col-md-6 mid-col" id="canvas-space">
+                </div>
+                <div class="col-md-3 right-col">
+                    <div class="row">
+                        <div class="position-button-group pull-right">
+                            <a class="btn btn-default btn-lg" data-position="front"><img src="images/white-front.png"></a>
+                            <a class="btn btn-default btn-lg" data-position="back"><img src="images/white-back.png"></a>
+                            <a class="btn btn-default btn-lg" data-position="left"><img src="images/white-left.png"></a>
+                            <a class="btn btn-default btn-lg" data-position="right"><img src="images/white-right.png"></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="color-button-group btn-group pull-right">
+                            <a class="btn btn-default btn-sm blue" title="blue" data-color="blue"><i class="icon-stop"></i></a>
+                            <a class="btn btn-default btn-sm red" title="red" data-color="red"><i class="icon-stop"></i></a>
+                            <a class="btn btn-default btn-sm black" title="black" data-color="black"><i class="icon-stop"></i></a>
+                            <a class="btn btn-default btn-sm white" title="white" data-color="white"><i class="icon-stop"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="size-button-group btn-group pull-right">
+                            <a class="btn btn-default btn-xs" data-size="s">S</a>
+                            <a class="btn btn-default btn-xs" data-size="m">M</a>
+                            <a class="btn btn-default btn-xs" data-size="l">L</a>
+                            <a class="btn btn-default btn-xs" data-size="xl">XL</a>
+                            <a class="btn btn-default btn-xs" data-size="xxl">XXL</a>
+                            <a class="btn btn-default btn-xs" data-size="xxxl">XXXL</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-toolbar text-editor" id="edit-toolbar">
+                <div class="btn-group-vertical">
+                    <a class="btn btn-default" title="Current color: Black" data-tool="color-settings"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default" title="Text settings" data-tool="text-settings"><i class="icon-font"></i></a>
+                </div>
+                <div class="btn-group-vertical">
+                    <a class="btn btn-default" data-prop="left" title="Centre design horizontally"><i class="icon-anchor"></i></a>
+                    <a class="btn btn-default" data-prop="middle" title="Place desgin in the middle"><i class="icon-align-center"></i></a>
+                </div>
+                <div class="btn-group-vertical">
+                    <a class="btn btn-default" data-prop="flipX" title="Flip horizontally"><i class="icon-exchange"></i></a>
+                    <a class="btn btn-default" data-prop="flipY" title="Flip vertically"><span class="glyphicon glyphicon-sort"></span></a>
+                </div>
+                <div class="btn-group-vertical">
+                    <a class="btn btn-default" title="Remove" data-tool="remove-object"><i class="icon-remove"></i></a>
+                </div>
+            </div>
+            <div class="popover left text-editor" id="color-settings">
+                <div class="arrow"></div>
+                <h3 class="popover-title">
+                    Current color: <span class="color-name">black</span>
+                    <button type="button" class="close" data-dismiss="popover">&times;</button>
+                </h3>
+                <div class="popover-content edit-toolbar-color-button-group">
+                    <a class="btn btn-default btn-sm" data-color="AliceBlue"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="AntiqueWhite"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Aqua"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Aquamarine"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Azure"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Beige"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Bisque"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Black"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="BlanchedAlmond"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Blue"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="BlueViolet"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Brown"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="BurlyWood"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="CadetBlue"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Chartreuse"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Chocolate"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Coral"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="CornflowerBlue"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Cornsilk"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Crimson"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Cyan"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkBlue"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkCyan"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkGoldenrod"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkGray"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkGreen"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkKhaki"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkMagenta"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkOliveGreen"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkOrange"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkOrchid"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkRed"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkSalmon"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkSeaGreen"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkSlateBlue"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkSlateGray"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkTurquoise"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DarkViolet"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DeepPink"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DeepSkyBlue"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DimGray"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="DodgerBlue"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="FireBrick"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="FloralWhite"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="ForestGreen"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Fuchsia"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Gainsboro"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="GhostWhite"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Gold"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Goldenrod"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Gray"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Green"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="GreenYellow"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Honeydew"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="HotPink"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="IndianRed"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Indigo"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Ivory"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Khaki"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="Lavender"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="LavenderBlush"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="LawnGreen"><i class="icon-stop"></i></a>
+                    <a class="btn btn-default btn-sm" data-color="LemonChiffon"><i class="icon-stop"></i></a>
+                </div>
+            </div>
+            <div class="popover left text-editor" id="text-settings">
+                <div class="arrow"></div>
+                <h3 class="popover-title">
+                    Text settings
+                    <button type="button" class="close" data-dismiss="popover">&times;</button>
+                </h3>
+                <div class="popover-content">
+                    <p class="form-inline">
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3" id="text-settings-text"></textarea>
+                    </div>
+                    </p>
+                    <p class="form-inline">
+                    <div class="form-group">
+                        <select class="form-control" id="text-settings-font">
+                            <option value="Arial">Arial</option>
+                            <option value="Impact">Impact</option>
+                        </select>
+                    </div>
+                    </p>
+                    <p class="form-inline">
+                    <div class="form-group">
+                        <select class="form-control" id="text-settings-size">
+                            <option>15</option>
+                            <option>16</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>21</option>
+                            <option>24</option>
+                            <option>26</option>
+                            <option>29</option>
+                            <option>32</option>
+                            <option>35</option>
+                            <option>38</option>
+                            <option>42</option>
+                            <option>47</option>
+                            <option>51</option>
+                            <option>56</option>
+                            <option>62</option>
+                            <option>68</option>
+                            <option>75</option>
+                            <option>83</option>
+                            <option>91</option>
+                        </select>
+                    </div>
+                    </p>
+                    <p class="form-inline edit-toolbar-text-button-group" id="text-settings-property">
+                        <a class="btn btn-default" data-prop="bold"><i class="icon-bold"></i></a>
+                        <a class="btn btn-default" data-prop="italic"><i class="icon-italic"></i></a>
+                        <a class="btn btn-default" data-prop="left"><i class="icon-align-left"></i></a>
+                        <a class="btn btn-default" data-prop="center"><i class="icon-align-center"></i></a>
+                        <a class="btn btn-default" data-prop="right"><i class="icon-align-right"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="popover left text-editor" id="remove-object">
+                <div class="arrow"></div>
+                <h3 class="popover-title">
+                    Remove?
+                    <button type="button" class="close" data-dismiss="popover">&times;</button>
+                </h3>
+                <div class="popover-content">
+                    <a class="btn btn-danger btn-xs" data-remove="yes">Yes</a>
+                    <a class="btn btn-default btn-xs" data-dismiss="popover">No</a>
+                </div>
+            </div>
+
+            <div class="span3"><a class="btn btn-large btn-primary" id="custom-save" href="">SAVE</a></div> 
+        </div>
+
+        <!-- modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="modal-preview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Your design</h4>
+                    </div>
+                    <div class="modal-body" style='margin:auto;text-align: center;height:500px;'>
+                        <div id='modal-preview-image-box'>
+                            <div id='modal-preview-image-wrapper'>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" data-index="0">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" data-action="prev" class="btn btn-primary pull-left">Prev</button>
+                        <button type="button" data-action="next" class="btn btn-primary pull-left">Next</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!--        <script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>-->
+        <script type="text/javascript" src="js/lib/jquery.js"></script>
+        <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/lib/1299.all.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/init.js"></script>
+        <!-- Load plupload and all it's runtimes and finally the jQuery queue widget -->
+        <!--        <script type="text/javascript" src="js/pluploader/plupload.full.js"></script>-->
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                init();
+            });
+
+            function init()
+            {
+                $.customToolInit.init('canvas-space');
+                $.customToolInit.toolsInit('.tools');
+                $.customToolInit.textEditorInit('.text-editor');
+
+                // miscellaneous 
+                // save image
+                $.customToolInit.miscInit();
+            }
+
+        </script>
+
+        <!-- Third party script for BrowserPlus runtime (Google Gears included in Gears runtime now) -->
+        <script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
+
+        <!-- Load plupload and all it's runtimes and finally the jQuery queue widget -->
+        <script type="text/javascript" src="js/pluploader/plupload.full.js"></script>
+
+        <script type="text/javascript">
+            // Custom example logic
+            (function($) {
+                // Image uploader
+                var uploader = new plupload.Uploader({
+                    runtimes: 'gears,html5,flash,silverlight,browserplus',
+                    browse_button: 'pickfiles',
+                    container: 'container',
+                    max_file_size: '10mb',
+                    url: 'upload.php',
+                    flash_swf_url: '/plupload/js/plupload.flash.swf',
+                    silverlight_xap_url: '/plupload/js/plupload.silverlight.xap',
+                    filters: [
+                        {title: "Image files", extensions: "jpg,gif,png"},
+                        {title: "Zip files", extensions: "zip"}
+                    ],
+                    resize: {width: 320, height: 240, quality: 90}
+                });
+
+                uploader.bind('Init', function(up, params) {
+                    $('#filelist').html("<div>Current runtime: " + params.runtime + "</div>");
+                });
+
+                $('#uploadfiles').click(function(e) {
+                    uploader.start();
+                    e.preventDefault();
+                });
+
+                uploader.init();
+
+                uploader.bind('FilesAdded', function(up, files) {
+                    $.each(files, function(i, file) {
+                        $('#filelist').append(
+                                '<div id="' + file.id + '">' +
+                                file.name + ' (' + plupload.formatSize(file.size) + ') <b></b>' +
+                                '</div>');
+                    });
+
+                    up.refresh(); // Reposition Flash/Silverlight
+                });
+
+                uploader.bind('UploadProgress', function(up, file) {
+                    $('#' + file.id + " b").html(file.percent + "%");
+                });
+
+                uploader.bind('Error', function(up, err) {
+                    $('#filelist').append("<div>Error: " + err.code +
+                            ", Message: " + err.message +
+                            (err.file ? ", File: " + err.file.name : "") +
+                            "</div>"
+                            );
+
+                    up.refresh(); // Reposition Flash/Silverlight
+                });
+
+                uploader.bind('FileUploaded', function(up, file) {
+                    $('#' + file.id + " b").html("100%");
+                });
+            })(jQuery);
+        </script>
+    </body>
+</html>
