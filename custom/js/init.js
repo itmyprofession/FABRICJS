@@ -87,7 +87,6 @@
             var i, p, id, self, wrapper, canvas, canvasSpace = $('#' + canvasSpaceId);
 
             self = this;
-            console.log(this.positions);
             // Initiate canvas
             for (i = 0; i < this.positions.length; i++) {
                 id = 'canvas-' + this.positions[i];
@@ -124,10 +123,12 @@
                     url = 'images/' + color + '-' + this.positions[i] + '.png';
 
                     $('#canvas-' + this.positions[i]).parent().parent().data('image', url);
-                    alert($('#canvas-' + this.positions[i]).parent().parent().data('image'));
+                    //alert($('#canvas-' + this.positions[i]).parent().parent().data('image'));
                     $('#canvas-' + this.positions[i]).parent().parent().css('background-image', 'url(' + url + ')');
                     $('.position-button-group a[data-position="' + this.positions[i] + '"] img').attr('src', url);
+
                 }
+                this.parts[this.position].tool.testImage('images/white-front.png');
                 this.color = color;
             }
         },

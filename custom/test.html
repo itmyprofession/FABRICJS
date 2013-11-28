@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <script src="js/lib/1299.all.js"></script>
+    </head>
+
+    <body>
+        <div class="canvas-container" style="position: relative; width: 500; height: 500px; border: 1px dotted #999;">
+            <img src="images/white-front.png" id="main-image" style="position: absolute;left: 0; top:0;"/>
+            <canvas id="canvas" width="500" height="500" style="border:1px solid #000000"></canvas>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    var canvas = new fabric.Canvas('canvas');
+
+    // Get height and width of canvas
+    console.log('height : ' + canvas.getHeight() + ' width : ' + canvas.getWidth());
+
+    /* 
+     // Add circle
+     canvas.add(new fabric.Circle({radius: 30, fill: '#f55', top: 100, left: 100}));
+     canvas.selectionColor = 'rgba(0,255,0,0.3)';
+     canvas.selectionBorderColor = 'red';
+     canvas.selectionLineWidth = 5;
+     canvas.setActiveObject(canvas.item(0));
+     canvas.renderAll();
+     */
+
+    var imgElement = document.getElementById('main-image');
+
+    /*
+     // Add image to canvas using image from dom
+     
+     var imgInstance = new fabric.Image(imgElement, {
+     left: 250,
+     top: 250,
+     //angle: 30,
+     opacity: 1
+     });
+     canvas.add(imgInstance);
+     */
+    //
+    imgElement.style.display = 'none';
+
+    // Set overlay image
+    // canvas.setOverlayImage(imgElement.src, canvas.renderAll.bind(canvas));
+
+
+    fabric.Image.fromURL('images/white-front.png', function(oImg) {
+        // scale image down, and flip it, before adding it onto canvas
+        //oImg.set('originX', 'left');
+        //oImg.set('originY', 'top');
+        //oImg.left = mememaker.lastImageX + oImg.getWidth() / 2;
+        //oImg.top = mememaker.lastImageY + oImg.getHeight() / 2;
+
+        //oImg.scaleToWidth(300);
+        //oImg.center();
+        //console.log(oImg);
+
+        canvas.add(oImg);
+        oImg.center();
+        oImg.scaleToWidth(500);
+        canvas.renderAll();
+    });
+
+    /*
+     // Add image using url
+     fabric.Image.fromURL('images/black-left.png', function(oImg) {
+     console.log(oImg.getWidth());
+     canvas.add(oImg);
+     oImg.center();
+     oImg.scaleToWidth(500);
+     canvas.renderAll();
+     });
+     */
+
+    var text = new fabric.Text('This is test text', {});
+    canvas.add(text);
+    text.center();
+    text.scaleToWidth(300);
+    canvas.renderAll();
+
+    console.log(canvas.toDataURL('png'));
+
+</script>

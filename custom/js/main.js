@@ -279,5 +279,19 @@ var CustomTool = fabric.util.createClass({
             jQuery('body').append('<img src="' + preview + '">');
         }).fail(function() {
         });
+    },
+    testImage: function(url) {
+        var self = this;
+        fabric.Image.fromURL(url, function(img) {
+            console.log(img);
+            //img.filters.push(new fabric.Image.filters.Sepia());
+            //img.applyFilters(this.canvas.renderAll.bind(this.canvas));
+            img.set({
+                left: 200,
+                top: 300,
+            });
+            this.canvas.add(img);
+            this.canvas.renderAll();
+        });
     }
 });
